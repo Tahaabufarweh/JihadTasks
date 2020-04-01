@@ -1,0 +1,562 @@
+<mat-card>
+    <mat-card>
+      <div class="row">
+        <div class="col-md-1">
+          <i style="cursor:pointer" class="ti-close" (click)="back()"></i>
+        </div>
+        <div class="col-md-11">
+        
+        </div>
+      </div>
+     
+   
+    </mat-card>
+    <mat-card [dir]="translate.currentLang != 'en' ? 'rtl' : 'ltr'">
+      <div class="row">
+        <div class="col-md-11 text-danger" style="font-size:16px !important" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'" *ngIf="interviewForm.invalid">*     {{ 'HOME.pleasefill' | translate }} </div>
+      </div>
+      <div class="row">
+        <div class="col-md-10" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'" ></div>
+        <div class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+  
+          <button mat-button (click)="flipLanguage('en')" *ngIf="translate.currentLang != 'en'" id="btnChangeToEnLang">English</button>
+          <button mat-button (click)="flipLanguage('ar')" *ngIf="translate.currentLang == 'en'"  id="btnChangeToArLang">عربي</button>
+        </div>
+      </div>
+      <form [formGroup]="interviewForm" [dir]="translate.currentLang != 'en' ? 'rtl' : 'ltr'">
+        <div class="row" [dir]="translate.currentLang != 'en' ? 'rtl' : 'ltr'">
+          <div [class.rtl-float]="translate.currentLang != 'en'" class="col-md-6" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+            <mat-form-field class="col-md-12">
+              <mat-select formControlName="mainReason" type="text" name="mainReason" (change)="resetOptions()" placeholder="{{ 'HOME.mainReason' | translate }}">
+                <mat-option>--</mat-option>
+                <mat-option [value]="1">
+                  {{ 'HOME.Job' | translate }}
+                </mat-option>
+                <mat-option [value]="2">
+                  {{ 'HOME.Team' | translate }}
+                </mat-option>
+                <mat-option [value]="3">
+                  {{ 'HOME.Personal' | translate }}
+                </mat-option>
+                <mat-option [value]="4">
+                  {{ 'HOME.Other' | translate }}
+                </mat-option>
+              </mat-select>
+  
+            </mat-form-field>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md-6" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+            <mat-form-field class="col-md-12">
+              <mat-select formControlName="options" type="text" name="options" placeholder="{{ 'HOME.options' | translate }}">
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let option of selectedOption(mainReason.value)" [value]="option.value">
+                  {{ translate.currentLang != 'en' ? option.arLabel : option.enLabel  }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <br />
+  
+        <div class="row">
+          <div class="col-md-8" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+            <div class="col-md-9" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+  
+              {{ 'HOME.acceptedJob' | translate }}
+              <i class="text-danger" *ngIf="acceptedJob.invalid">
+                *
+              </i>
+            </div>
+            <div class="col-md-3">
+              <mat-radio-group formControlName="acceptedJob" (change)="acceptedJob.value == true ? setStringValidator(): clearValidators()">
+                <mat-radio-button [value]="true">{{ 'HOME.Yes' | translate }}</mat-radio-button>
+                <mat-radio-button [value]="false">{{ 'HOME.No' | translate }}</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <br />
+  
+          </div>
+        </div>
+        <br />
+        <div class="row" *ngIf="acceptedJob.value == true">
+          <div class="col-md-8" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+            <div class="col-md-9" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+              {{ 'HOME.AcceptedJobPlace' | translate }}
+              <i class="text-danger" *ngIf="acceptedJobPlace.invalid">
+                *
+              </i>
+            </div>
+            <div class="col-md-3">
+              <mat-radio-group formControlName="acceptedJobPlace">
+                <mat-radio-button [value]="true">{{ 'HOME.InsideJordan' | translate }}</mat-radio-button>
+                <mat-radio-button [value]="false">{{ 'HOME.OutsideJordan' | translate }}</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+  
+        </div>
+        <br />
+        <div class="row" *ngIf="acceptedJob.value == true">
+          <div class="col-md-8" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+            <mat-form-field class="col-md-12" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+              <mat-select formControlName="acceptedJobReason" type="text" name="AcceptedJobReason" placeholder="{{ 'HOME.AcceptedJobReason' | translate }}">
+                <mat-option>--</mat-option>
+                <mat-option [value]="1">
+                  {{ 'HOME.BetterPay' | translate }}
+                </mat-option>
+                <mat-option [value]="11">
+                  {{ 'HOME.BetterWorkBenefits' | translate }}
+                </mat-option>
+                <mat-option [value]="2">
+                  {{ 'HOME.BetterNatureofWork' | translate }}
+                </mat-option>
+                <mat-option [value]="3">
+                  {{ 'HOME.Betterworkenvironment' | translate }}
+                </mat-option>
+                <mat-option [value]="4">
+                  {{ 'HOME.BetterLocation' | translate }}
+                </mat-option>
+                <mat-option [value]="5">
+                  {{ 'HOME.Betterworkinghours' | translate }}
+                </mat-option>
+                <mat-option [value]="6">
+                  {{ 'HOME.BetterCareerPath' | translate }}
+                </mat-option>
+                <mat-option [value]="7">
+                  {{ 'HOME.LessStressfulWork' | translate }}
+                </mat-option>
+                <mat-option [value]="8">
+                  {{ 'HOME.Morechallenging' | translate }}
+                </mat-option>
+                <mat-option [value]="9">
+                  {{ 'HOME.BetterPositionTitle' | translate }}
+                </mat-option>
+                <mat-option [value]="10">
+                  {{ 'HOME.Other' | translate }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <br />
+        <mat-card>
+          <div class="row">
+            <div class="col-md-12">
+              <h3>
+                {{ 'HOME.OverallSatisfactionTitle' | translate }}
+              </h3>
+            </div>
+          </div>
+          <hr />
+          <div class="row" style="font-weight:bold">
+            <div class="col-md-6" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.Factor' | translate }}</div>
+            <div class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.StronglyAgree' | translate }}</div>
+            <div class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.Agree' | translate }}</div>
+            <div class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.Disagree' | translate }}</div>
+            <div class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.StronglyDisagree' | translate }}</div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-md-6" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+              {{ 'HOME.OverallSatisfaction' | translate }}
+              <i class="text-danger" *ngIf="overallSatisfaction.invalid">
+                *
+              </i>
+            </div>
+            <mat-radio-group formControlName="overallSatisfaction">
+              <mat-radio-button [value]="1" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="2" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="3" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="4" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+            </mat-radio-group>
+          </div>
+  
+        </mat-card>
+        <br />
+        <mat-card>
+          <div class="row">
+            <div class="col-md-12">
+              <h3>
+                {{ 'HOME.TheJobTitle' | translate }}
+              </h3>
+            </div>
+          </div>
+          <hr />
+          <div class="row" style="font-weight:bold">
+            <div class="col-md-6" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.Factor' | translate }}</div>
+            <div class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.StronglyAgree' | translate }}</div>
+            <div class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.Agree' | translate }}</div>
+            <div class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.Disagree' | translate }}</div>
+            <div class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.StronglyDisagree' | translate }}</div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-md-6" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+              {{ 'HOME.JobTools' | translate }}
+              <i class="text-danger" *ngIf="jobTools.invalid">
+                *
+              </i>
+            </div>
+            <mat-radio-group formControlName="jobTools">
+              <mat-radio-button [value]="1" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="2" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="3" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="4" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="row">
+            <div class="col-md-6" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+              {{ 'HOME.SufficientOpportinities' | translate }}
+              <i class="text-danger" *ngIf="sufficientOpportinities.invalid">
+                *
+              </i>
+            </div>
+            <mat-radio-group formControlName="sufficientOpportinities">
+              <mat-radio-button [value]="1" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="2" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="3" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="4" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="row">
+            <div class="col-md-6" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+              {{ 'HOME.LearningNewThings' | translate }}
+              <i class="text-danger" *ngIf="learningNewThings.invalid">
+                *
+              </i>
+            </div>
+            <mat-radio-group formControlName="learningNewThings">
+              <mat-radio-button [value]="1" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="2" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="3" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="4" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="row">
+            <div class="col-md-6" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+              {{ 'HOME.AdequateTraining' | translate }}
+              <i class="text-danger" *ngIf="adequateTraining.invalid">
+                *
+              </i>
+            </div>
+            <mat-radio-group formControlName="adequateTraining">
+              <mat-radio-button [value]="1" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="2" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="3" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="4" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </mat-card>
+        <br />
+        <mat-card>
+          <div class="row">
+            <div class="col-md-12">
+              <h3>
+                {{ 'HOME.TheBenifitsTitle' | translate }}
+              </h3>
+            </div>
+          </div>
+          <hr />
+          <div class="row" style="font-weight:bold">
+            <div class="col-md-6" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.Factor' | translate }}</div>
+            <div class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.StronglyAgree' | translate }}</div>
+            <div class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.Agree' | translate }}</div>
+            <div class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.Disagree' | translate }}</div>
+            <div class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.StronglyDisagree' | translate }}</div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-md-6" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+              {{ 'HOME.AdequateSalary' | translate }}
+              <i class="text-danger" *ngIf="adequateSalary.invalid">
+                *
+              </i>
+            </div>
+            <mat-radio-group formControlName="adequateSalary">
+              <mat-radio-button [value]="1" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="2" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="3" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="4" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="row">
+            <div class="col-md-6" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+              {{ 'HOME.OtherBenifits' | translate }}
+              <i class="text-danger" *ngIf="otherBenifits.invalid">
+                *
+              </i>
+            </div>
+            <mat-radio-group formControlName="otherBenifits">
+              <mat-radio-button [value]="1" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="2" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="3" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="4" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </mat-card>
+        <br />
+        <mat-card>
+          <div class="row">
+            <div class="col-md-12">
+              <h3>
+                {{ 'HOME.TheCompany' | translate }}
+              </h3>
+            </div>
+          </div>
+  
+          <div class="row" style="font-weight:bold">
+            <div class="col-md-6" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.Factor' | translate }}</div>
+            <div class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.StronglyAgree' | translate }}</div>
+            <div class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.Agree' | translate }}</div>
+            <div class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.Disagree' | translate }}</div>
+            <div class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.StronglyDisagree' | translate }}</div>
+          </div>
+          <div class="row">
+            <div class="col-md-6" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+              {{ 'HOME.GoodInvironment' | translate }}
+              <i class="text-danger" *ngIf="goodInvironment.invalid">
+                *
+              </i>
+            </div>
+            <mat-radio-group formControlName="goodInvironment">
+              <mat-radio-button [value]="1" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="2" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="3" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="4" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="row">
+            <div class="col-md-6" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+              {{ 'HOME.InternalCommunications' | translate }}
+              <i class="text-danger" *ngIf="internalCommunications.invalid">
+                *
+              </i>
+            </div>
+            <mat-radio-group formControlName="internalCommunications">
+              <mat-radio-button [value]="1" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="2" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="3" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="4" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="row">
+            <div class="col-md-6" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+              {{ 'HOME.CompanyPolicies' | translate }}
+              <i class="text-danger" *ngIf="companyPolicies.invalid">
+                *
+              </i>
+            </div>
+            <mat-radio-group formControlName="companyPolicies">
+              <mat-radio-button [value]="1" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="2" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="3" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="4" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </mat-card>
+        <br />
+        <mat-card>
+          <div class="row">
+            <div class="col-md-12" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+              <h3>
+                {{ 'HOME.TheManagement' | translate }}
+              </h3>
+            </div>
+          </div>
+          <hr />
+          <div class="row" style="font-weight:bold">
+            <div class="col-md-6" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.Factor' | translate }}</div>
+            <div class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.StronglyAgree' | translate }}</div>
+            <div class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.Agree' | translate }}</div>
+            <div class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.Disagree' | translate }}</div>
+            <div class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">{{ 'HOME.StronglyDisagree' | translate }}</div>
+          </div>
+          <br />
+          <div class="row">
+            <div class="col-md-6" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+              {{ 'HOME.ManagerSuggestions' | translate }}
+              <i class="text-danger" *ngIf="managerSuggestions.invalid">
+                *
+              </i>
+            </div>
+            <mat-radio-group formControlName="managerSuggestions">
+              <mat-radio-button [value]="1" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="2" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="3" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="4" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="row">
+            <div class="col-md-6" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+              {{ 'HOME.ManagerAchievements' | translate }}
+              <i class="text-danger" *ngIf="managerAchievements.invalid">
+                *
+              </i>
+            </div>
+            <mat-radio-group formControlName="managerAchievements">
+              <mat-radio-button [value]="1" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="2" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="3" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="4" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="row">
+            <div class="col-md-6" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+              {{ 'HOME.ManagerPromoted' | translate }}
+              <i class="text-danger" *ngIf="managerPromoted.invalid">
+                *
+              </i>
+            </div>
+            <mat-radio-group formControlName="managerPromoted">
+              <mat-radio-button [value]="1" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="2" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="3" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="4" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="row">
+            <div class="col-md-6" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+              {{ 'HOME.ManagerFeedback' | translate }}
+              <i class="text-danger" *ngIf="managerFeedback.invalid">
+                *
+              </i>
+            </div>
+            <mat-radio-group formControlName="managerFeedback">
+              <mat-radio-button [value]="1" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="2" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="3" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="4" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="row">
+            <div class="col-md-6" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+              {{ 'HOME.ManagerProfissional' | translate }}
+              <i class="text-danger" *ngIf="managerProfissional.invalid">
+                *
+              </i>
+            </div>
+            <mat-radio-group formControlName="managerProfissional">
+              <mat-radio-button [value]="1" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="2" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="3" class="col-md-1" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+              <mat-radio-button [value]="4" class="col-md-2" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'"></mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </mat-card>
+        <br />
+  
+        <div class="row">
+          <div class="col-md-8" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+            <mat-form-field class="col-md-12">
+              <textarea matInput formControlName="doRight" type="text" name="DoRight" id="DoRight" placeholder="{{ 'HOME.DoRight' | translate }}"></textarea>
+  
+            </mat-form-field>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md-8" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+            <mat-form-field class="col-md-12">
+              <textarea matInput formControlName="doWrong" type="text" name="DoWrong" id="DoWrong" placeholder="{{ 'HOME.DoWrong' | translate }}"></textarea>
+  
+            </mat-form-field>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md-8" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+            <mat-form-field class="col-md-12">
+              <textarea matInput formControlName="createBetterWorkPlace" type="text" name="CreateBetterWorkPlace" id="CreateBetterWorkPlace" placeholder="{{ 'HOME.CreateBetterWorkPlace' | translate }}"></textarea>
+  
+            </mat-form-field>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md-8" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+            <div class="col-md-9" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+              {{ 'HOME.ConsiderWorkignAgain' | translate }}
+              <i class="text-danger" *ngIf="considerWorkignAgain.invalid">
+                *
+              </i>
+            </div>
+            <div class="col-md-3" >
+  
+              <mat-radio-group formControlName="considerWorkignAgain" (change)="considerWorkignAgain.value == false ? setValidations('considerWorkignAgainReason') : removeValidations('considerWorkignAgainReason')">
+                <mat-radio-button [value]="true">{{ 'HOME.Yes' | translate }}</mat-radio-button>
+                <mat-radio-button [value]="false">{{ 'HOME.No' | translate }}</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="row" *ngIf="considerWorkignAgain.value == false">
+          <div class="col-md-8" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+            <mat-form-field class="col-md-12">
+              <textarea matInput formControlName="considerWorkignAgainReason" type="text" name="ConsiderWorkignAgainReason" id="CreateBetterWorkPlace" placeholder="{{ 'HOME.ConsiderWorkignAgainReason' | translate }}"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md-8" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+            <div class="col-md-9">
+              {{ 'HOME.RecommentSts' | translate }}
+              <i class="text-danger" *ngIf="recommentSts.invalid">
+                *
+              </i>
+            </div>
+            <div class="col-md-3">
+              <mat-radio-group formControlName="recommentSts" (change)="recommentSts.value == false ? setValidations('recommendStsreason') : removeValidations('recommendStsreason')">
+                <mat-radio-button [value]="true">{{ 'HOME.Yes' | translate }}</mat-radio-button>
+                <mat-radio-button [value]="false">{{ 'HOME.No' | translate }}</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="row" *ngIf="recommentSts.value == false">
+          <div class="col-md-8" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+            <mat-form-field class="col-md-12">
+              <textarea matInput formControlName="recommendStsreason" type="text" name="CreateBetterWorkPlace" id="RecommendStsreason" placeholder="{{ 'HOME.RecommendStsreason' | translate }}"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md-8" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+            <mat-form-field class="col-md-12">
+              <textarea matInput formControlName="comments" type="text" name="Comments" id="Comments" placeholder="{{ 'HOME.Comments' | translate }}"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-md-8 " [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+            <div class="col-md-9">
+              {{ 'HOME.PersonalExitInterview' | translate }}
+              <i class="text-danger" *ngIf="personalExitInterview.invalid">
+                *
+              </i>
+            </div>
+            <div class="col-md-3" [style.float]="translate.currentLang != 'en' ? 'right' : 'left'">
+              <mat-radio-group formControlName="personalExitInterview">
+                <mat-radio-button [value]="true">{{ 'HOME.Yes' | translate }}</mat-radio-button>
+                <mat-radio-button [value]="false">{{ 'HOME.No' | translate }}</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+        </div>
+        <br />
+        <hr />
+        <div class="text-center">
+          <button mat-raised-button color="primary" (click)="submitExitInterview()" [disabled]="buttonDisabled || interviewForm.invalid" id="btnSubmitExitInterview">Submit</button>
+        </div>
+      </form>
+    </mat-card>
+  
+  </mat-card>
+  
