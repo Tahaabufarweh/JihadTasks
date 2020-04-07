@@ -1,0 +1,367 @@
+<mat-card >
+    <mat-card class="header">
+        <h1>{{'HOME.mainHeader' | translate}}</h1>
+        
+    </mat-card>
+    <hr>
+    <button mat-stroked-button color="accent" *ngIf="translate.currentLang != 'en'" (click)="switchLanguage('en')"  id="btnChangeToEnLang">English</button>
+    <button mat-stroked-button color="accent"  *ngIf="translate.currentLang == 'en'"(click)="switchLanguage('ar')" id="btnChangeToArLang">عربي</button>
+    <mat-card id="Tr-Data">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p>{{'HOME.Name' | translate}} --------</p>
+                </div>
+                <div class="col">
+                    <p>{{'HOME.Division' | translate}} --------</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>{{'HOME.Department' | translate}}-------</p>
+                </div>
+                <div class="col">
+                    <p>{{'HOME.Section' | translate}}-------</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>{{'HOME.InternshipStartDate' | translate}}-------</p>
+                </div>
+                <div class="col">
+                    <p>{{'HOME.InternshipEndDate' | translate}}-------</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>{{'HOME.nameOfEvaluator' | translate}}-------</p>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+    <hr>
+    <mat-card id="Ev-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                    <div class="row">
+                        <div class="col-lg">
+                            <p>{{'HOME.Agree' | translate}}</p>
+    
+                        </div>
+                        <div class="col-lg">
+                            <p>{{'HOME.StronglyAgree' | translate}}</p>
+                        </div>
+                        <div class="col-lg">
+                            <p>{{'HOME.DissAgree' | translate}}</p>
+                        </div>
+                        <div class="col-lg">
+                            <p>{{'HOME.StronglyDissAgree' | translate}}</p>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>{{'HOME.Q1' | translate}}</p>
+    
+                </div>
+                <div class="col">
+                    <mat-radio-group aria-label="Select an option">
+                    <div class="row">
+                        <div class="col-sm-1"><mat-radio-button value="1"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="2"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="3"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="4"></mat-radio-button></div>
+    
+                    </div>
+                </mat-radio-group>
+                </div>
+              
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>{{'HOME.Q2' | translate}}</p>
+                </div>
+                <div class="col">
+                    <mat-radio-group aria-label="Select an option">
+                    <div class="row">
+                        <div class="col-sm-1"><mat-radio-button value="1"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="2"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="3"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="4"></mat-radio-button></div>
+                    </div>
+                </mat-radio-group>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>{{'HOME.Q3' | translate}}</p>
+                </div>
+                <div class="col">
+                    <mat-radio-group aria-label="Select an option">
+                    <div class="row">
+                        <div class="col-sm-1"><mat-radio-button value="1"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="2"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="4"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="4"></mat-radio-button></div>
+                    </div>
+                </mat-radio-group>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>{{'HOME.Q4' | translate}} </p>
+                </div>
+                <div class="col">
+                    <mat-radio-group aria-label="Select an option">
+                    <div class="row">
+                        <div class="col-sm-1"><mat-radio-button value="1"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="2"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="3"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="4"></mat-radio-button></div>
+                    </div>
+                </mat-radio-group>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>{{'HOME.Q5' | translate}} </p>
+                </div>
+                <div class="col">
+                    <mat-radio-group aria-label="Select an option">
+                    <div class="row">
+                        <div class="col-sm-1"><mat-radio-button value="1"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="2"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="3"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="4"></mat-radio-button></div>
+                    </div>
+                </mat-radio-group>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>{{'HOME.Q6' | translate}}</p>
+                </div>
+                <div class="col">
+                    <mat-radio-group aria-label="Select an option">
+                    <div class="row">
+                        <div class="col-sm-1"><mat-radio-button value="1"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="2"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="3"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="4"></mat-radio-button></div>
+                    </div>
+                </mat-radio-group>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>{{'HOME.Q7' | translate}}</p>
+                </div>
+                <div class="col">
+                    <mat-radio-group aria-label="Select an option">
+                    <div class="row">
+                        <div class="col-sm-1"><mat-radio-button value="1"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="2"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="3"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="4"></mat-radio-button></div>
+                    </div>
+                </mat-radio-group>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>{{'HOME.Q8' | translate}}</p>
+                </div>
+                <div class="col">
+                    <mat-radio-group aria-label="Select an option">
+                    <div class="row">
+                        <div class="col-sm-1"><mat-radio-button value="1"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="2"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="3"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="4"></mat-radio-button></div>
+                    </div>
+                </mat-radio-group>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>{{'HOME.Q9' | translate}} </p>
+                </div>
+                <div class="col">
+                    <mat-radio-group aria-label="Select an option">
+                    <div class="row">
+                        
+                        <div class="col-sm-1"><mat-radio-button value="1"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="2"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="3"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="4"></mat-radio-button></div>
+                    
+                    </div>
+                </mat-radio-group>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>{{'HOME.Q10' | translate}}</p>
+                </div>
+                <div class="col">
+                    <mat-radio-group aria-label="Select an option">
+                    <div class="row">
+                        <div class="col-sm-1"><mat-radio-button value="1"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="2"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="3"></mat-radio-button></div>
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-1"><mat-radio-button value="4"></mat-radio-button></div>
+                    </div>
+                </mat-radio-group>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+    <hr>
+    <mat-card >
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <mat-accordion class="example-headers-align">
+                        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle id="Ques">
+                          <mat-expansion-panel-header>
+                              <div class="container">
+                                  <div class="row">
+                                      <div class="col">
+                                        <mat-panel-title>
+                                            {{'HOME.Q11' | translate}}
+                                        </mat-panel-title>
+                                      </div>
+                                      <div class="col">
+                                          
+                                      </div>
+                                      <div class="col">
+                                        <mat-panel-description>
+                                            {{'HOME.hint1' | translate}}
+                                          <mat-icon>contact_support
+                                        </mat-icon>
+                                        </mat-panel-description>
+                                      </div>
+                                  </div>
+                              </div>
+                            
+                           
+                          </mat-expansion-panel-header>
+                      
+                          <mat-radio-group aria-label="Select an option"  (change)="toggelCollapsed()">
+                              <div class="row">
+                                  <div class="col-sm-2"><mat-radio-button value="1" checked>{{'HOME.Yes' | translate}}</mat-radio-button></div>
+                                  <div class="col-sm-2"><mat-radio-button value="2">{{'HOME.No' | translate}}</mat-radio-button></div>
+                              </div>
+                          </mat-radio-group>
+                          <div class="container" *ngIf="!isCollapsed">
+                              <div class="row">
+                                  <div class="col">
+                                    <p>{{'HOME.hint2' | translate}}</p>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <mat-form-field class="col">
+                                            <textarea matInput placeholder="Give Reason"></textarea>
+                                          </mat-form-field>
+    
+                                    </div>
+                                </div>
+                              
+                              
+                              
+                              
+                          
+    
+    
+                          </div>
+                      
+                          <mat-action-row>
+                            <button mat-button color="accent" (click)="nextStep()">{{'HOME.next' | translate}}</button>
+                          </mat-action-row>
+                          
+                        </mat-expansion-panel >
+                      
+                        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+                          <mat-expansion-panel-header>
+                              <div class="container">
+                                  <div class="row">
+                                      <div class="col">
+                                        <mat-panel-title>
+                                            {{'HOME.Comments' | translate}}
+                                          </mat-panel-title>
+    
+                                      </div>
+                                      <div class="col">
+    
+                                      </div>
+                                      <div class="col">
+                                        <mat-panel-description>
+                                            {{'HOME.hint3' | translate}}
+                                            <mat-icon>add_comment</mat-icon>
+                                        </mat-panel-description>
+    
+                                      </div>
+                                  </div>
+    
+                              </div>
+                            
+                            
+                          </mat-expansion-panel-header>
+    
+                          <mat-form-field class="col">
+                            <textarea matInput placeholder="Leave a comment"></textarea>
+                          </mat-form-field>
+                      
+                         
+                      
+                          <mat-action-row>
+                            <button mat-button color="warn" (click)="prevStep()">{{'HOME.previous' | translate}}</button>
+                            <button mat-button color="accent" (click)="nextStep()">{{'HOME.End' | translate}}</button>
+                          </mat-action-row>
+                        </mat-expansion-panel>
+                      
+                       
+                      
+                      </mat-accordion>
+                </div>
+            </div>
+        </div>
+        
+    
+    </mat-card>
+    </mat-card>

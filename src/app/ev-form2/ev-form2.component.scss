@@ -1,0 +1,29 @@
+.header h1{
+    text-align: center;
+    font-family: 'Catamaran', sans-serif;
+    color: white;
+    text-transform: capitalize;
+    font-size: 60px;
+}
+.header{
+    background-color: #00cec9;
+   
+}
+#Tr-Data p{
+    font-family: 'Catamaran', sans-serif;
+    font-size: larger;
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}

@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EvFormComponent } from './ev-form/ev-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EvForm2Component } from './ev-form2/ev-form2.component';
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
@@ -16,7 +17,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    EvFormComponent
+    EvFormComponent,
+    EvForm2Component
   ],
   imports: [
     BrowserModule,
