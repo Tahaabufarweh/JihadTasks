@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EvFormComponent } from './ev-form/ev-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EvForm2Component } from './ev-form2/ev-form2.component';
+import { MedRecordComponent } from './med-record/med-record.component';
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
@@ -18,7 +19,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
   declarations: [
     AppComponent,
     EvFormComponent,
-    EvForm2Component
+    EvForm2Component,
+    MedRecordComponent
   ],
   imports: [
     BrowserModule,

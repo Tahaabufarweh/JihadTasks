@@ -37,4 +37,57 @@
 
 
   }
+  ,
+  
+    "MED":
+    {
+      "h1":"Welcome",
+      "q1":"I confirm the below data is up to date",
+      "h2":"Personal Information",
+      "h3":"Address Information",
+      "h4":"Medical Information",
+      "q2":"Do you have any chronical diseases ?",
+      "b1":"Add Chronical diseases",
+      "q3":"Do you use Regular Medicine ?",
+      "b2":"Add Medicine",
+      "q4":"Do you have allergies to any medicine ?",
+      "b3":"Add Allergies",
+      "q5":"Any previous major surgeries ?",
+      "b4":"Add Surgeries",
+      "q6":"Do you have other than STS medical insurance ?",
+      "b5":"Add Medical Information",
+      "h5":"Emergency Contacts",
+      "h51":"First Contact Information",
+      "h52":"Second Contact Information",
+      "h6":"Other",
+      "q7":"Is there any other information you would like to provide related to your health and medical history ?",
+      "b6":"Add other info",
+      "h7":"Attachments",
+      "c1":"Employee Name",
+      "c2":"Employee no ",
+      "c3":"Gender",
+      "c4":"Department",
+      "c5":"National ID",
+      "c6":"job Title",
+      "c7":"Direct Manager",
+      "c8":"Country",
+      "c9":"City",
+      "c10":"Area",
+      "c11":"Street Name ",
+      "c12":"Building no",
+      "c13":"Blood Type",
+      "c14":"Name",
+      "c15":"RelationShip",
+      "c16":"Emergency Country",
+      "c17":"country Code",
+      "c18":"Mobile Number",
+      "c19":"landing Number",
+      "yes":"yes",
+      "no":"no"
+
+
+    
+
+    }
+  
 }

@@ -1,0 +1,593 @@
+    <mat-card >
+        <mat-card-header class="header">
+            <div class="container">
+            <div class="row">
+                <div class="col"><h1>{{'MED.h1'| translate}}</h1></div>
+                <div class="col"></div>
+                <div class="col">
+                    <button mat-stroked-button color="accent" *ngIf="translate.currentLang != 'en'" (click)="switchLanguage('en')"  id="btnChangeToEnLang">English</button>
+                    <button mat-stroked-button color="accent"  *ngIf="translate.currentLang == 'en'"(click)="switchLanguage('ar')" id="btnChangeToArLang">عربي</button>
+                </div>
+            </div>
+        </div>
+        
+    </mat-card-header>
+    <hr/>
+
+    <mat-card-content>
+        <mat-checkbox>{{'MED.q1'| translate}}</mat-checkbox>
+    </mat-card-content>
+        
+    </mat-card>
+    <mat-card>
+        <mat-card-header class="header">
+            <h1> {{'MED.h2'| translate}}</h1>
+        </mat-card-header>
+        <hr/>
+        <mat-card-content>
+            <div class="container">
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col"> <mat-form-field class="example-full-width">
+                        <input matInput placeholder="{{'MED.c1'| translate}}" >
+                      </mat-form-field></div>
+                      <div class="col"></div>
+                </div>
+                <div class="row">
+                      <div class="col">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="{{'MED.c2'| translate}}" >
+                          </mat-form-field>
+                      </div>
+                      <div class="col">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="{{'MED.c3'| translate}}" >
+                          </mat-form-field>
+                      </div> 
+
+                </div>
+                <div class="row">
+                    <div class="col">
+                      <mat-form-field class="example-full-width">
+                          <input matInput placeholder="{{'MED.c4'| translate}}" >
+                        </mat-form-field>
+                    </div>
+                    <div class="col">
+                      <mat-form-field class="example-full-width">
+                          <input matInput placeholder="{{'MED.c5'| translate}}" >
+                        </mat-form-field>
+                    </div> 
+                </div>
+                    <div class="row">
+                        <div class="col">
+                          <mat-form-field class="example-full-width">
+                              <input matInput placeholder="{{'MED.c6'| translate}}" >
+                            </mat-form-field>
+                        </div>
+                        <div class="col">
+                          <mat-form-field class="example-full-width">
+                              <input matInput placeholder="{{'MED.c7'| translate}}" >
+                            </mat-form-field>
+                        </div> 
+                        </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    <mat-card>
+        <mat-card-header class="header">
+            <h1> {{'MED.h3'| translate}} </h1>
+        </mat-card-header>
+        <hr/>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <mat-form-field>
+                        <mat-label>{{'MED.c8'| translate}}</mat-label>
+                        <mat-select >
+                          <mat-option>None</mat-option>
+                          <mat-option value="option1">Jordan</mat-option>
+                          <mat-option value="option2">UAE</mat-option>
+                          <mat-option value="option3">Germany</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field>
+                        <mat-label>{{'MED.c9'| translate}}</mat-label>
+                        <mat-select >
+                          <mat-option>None</mat-option>
+                          <mat-option value="option1">Jordan</mat-option>
+                          <mat-option value="option2">UAE</mat-option>
+                          <mat-option value="option3">Germany</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="{{'MED.c10'| translate}}" >
+                      </mat-form-field>
+                </div>
+                <div class="col">
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="{{'MED.c11'| translate}}" >
+                      </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                
+                    <div class="col">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="{{'MED.c12'| translate}}" >
+                          </mat-form-field>
+                    </div>
+                    <div class="col"></div>
+                </div>
+      
+        </div>
+    </mat-card>
+    <mat-card>
+        <mat-card-header class="header">
+            <h1> {{'MED.h4'| translate}}</h1>
+        </mat-card-header>
+        <hr/>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <mat-form-field>
+                        <mat-label>{{'MED.c13'| translate}}</mat-label>
+                        <mat-select >
+                          <mat-option>None</mat-option>
+                          <mat-option value="option1">Jordan</mat-option>
+                          <mat-option value="option2">UAE</mat-option>
+                          <mat-option value="option3">Germany</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                <mat-accordion class="example-headers-align">
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <mat-panel-title>
+                                            {{'MED.q2'| translate}}
+                                          </mat-panel-title>
+                                    </div>
+                                    
+                                </div>
+                            </div> 
+                        
+                        </mat-expansion-panel-header>
+                        <mat-radio-group aria-label="Select an option"  (change)="toggelCollapsed()">
+                            <div class="row">
+                                <div class="col-sm-2"><mat-radio-button value="1" >{{'MED.yes'| translate}}</mat-radio-button></div>
+                                <div class="col-sm-2"><mat-radio-button value="2" checked>{{'MED.no'| translate}}</mat-radio-button></div>
+                            </div>
+                        </mat-radio-group>
+                        <div class="container" *ngIf="isCollapsed">
+                           
+                              <div class="row">
+                                  <div class="col">
+                                      <mat-form-field class="example-full-width">
+                                          <textarea matInput placeholder="Chronical diseases Name"></textarea>
+                                     </mat-form-field>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                <div class="col">
+                                    <button mat-stroked-button color="primary">{{'MED.b1'| translate}}</button>
+                                </div>
+                              </div>
+                         </div>
+
+
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                <mat-accordion class="example-headers-align">
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <mat-panel-title>
+                                            {{'MED.q3'| translate}}
+                                          </mat-panel-title>
+                                    </div>
+                                    
+                                </div>
+                            </div> 
+                        
+                        </mat-expansion-panel-header>
+                        <mat-radio-group aria-label="Select an option"  (change)="toggelCollapsed()">
+                            <div class="row">
+                                <div class="col-sm-2"><mat-radio-button value="1" >{{'MED.yes'| translate}}</mat-radio-button></div>
+                                <div class="col-sm-2"><mat-radio-button value="2" checked>{{'MED.no'| translate}}</mat-radio-button></div>
+                            </div>
+                        </mat-radio-group>
+                        <div class="container" *ngIf="isCollapsed">
+                           
+                              <div class="row">
+                                  <div class="col">
+                                      <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Medicine Name" >
+                                        </mat-form-field>
+  
+                                  </div>
+                                  <div class="col">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Dosage" >
+                                        </mat-form-field>
+                                  </div>
+                                  <div class="col"></div>
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Number of times" >
+                                    </mat-form-field>
+                              </div>
+                              <div class="row">
+                                  <div class="col">
+                                    <button mat-stroked-button color="primary">{{'MED.b2'| translate}}</button>
+
+                              </div>
+                            </div>
+                              </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                <mat-accordion class="example-headers-align">
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <mat-panel-title>
+                                            {{'MED.q4'| translate}}
+                                          </mat-panel-title>
+                                    </div>
+                                    
+                                </div>
+                            </div> 
+                        
+                        </mat-expansion-panel-header>
+                        <mat-radio-group aria-label="Select an option"  (change)="toggelCollapsed()">
+                            <div class="row">
+                                <div class="col-sm-2"><mat-radio-button value="1" >{{'MED.yes'| translate}}</mat-radio-button></div>
+                                <div class="col-sm-2"><mat-radio-button value="2" checked>{{'MED.no'| translate}}</mat-radio-button></div>
+                            </div>
+                        </mat-radio-group>
+                        <div class="container" *ngIf="isCollapsed">                     
+                              <div class="row">
+                                  <div class="col">
+                                      <mat-form-field class="example-full-width">
+                                          <textarea matInput placeholder="Allergies"></textarea>
+                                        </mat-form-field>
+                                    </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col">
+                                    <button mat-stroked-button color="primary">{{'MED.b3'| translate}}</button>
+                                  </div>
+                             </div>
+                         </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                <mat-accordion class="example-headers-align">
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <mat-panel-title>
+                                            {{'MED.q5'| translate}}
+                                          </mat-panel-title>
+                                    </div>
+                                    
+                                </div>
+                            </div> 
+                        
+                        </mat-expansion-panel-header>
+                        <mat-radio-group aria-label="Select an option"  (change)="toggelCollapsed()">
+                            <div class="row">
+                                <div class="col-sm-2"><mat-radio-button value="1" >{{'MED.yes'| translate}}</mat-radio-button></div>
+                                <div class="col-sm-2"><mat-radio-button value="2" checked>{{'MED.no'| translate}}</mat-radio-button></div>
+                            </div>
+                        </mat-radio-group>
+                        <div class="container" *ngIf="isCollapsed">                     
+                              <div class="row">
+                                  <div class="col">
+                                      <mat-form-field class="example-full-width">
+                                          <textarea matInput placeholder="Surgeries"></textarea>
+                                        </mat-form-field>
+                                    </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col">
+                                    <button mat-stroked-button color="primary">{{'MED.b4'| translate}}</button>
+                                  </div>
+                             </div>
+                         </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                <mat-accordion class="example-headers-align">
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <mat-panel-title>
+                                            {{'MED.q6'| translate}}
+                                          </mat-panel-title>
+                                    </div>
+                                    
+                                </div>
+                            </div> 
+                        
+                        </mat-expansion-panel-header>
+                        <mat-radio-group aria-label="Select an option"  (change)="toggelCollapsed()">
+                            <div class="row">
+                                <div class="col-sm-2"><mat-radio-button value="1" >{{'MED.yes'| translate}}</mat-radio-button></div>
+                                <div class="col-sm-2"><mat-radio-button value="2" checked>{{'MED.no'| translate}}</mat-radio-button></div>
+                            </div>
+                        </mat-radio-group>
+                        <div class="container" *ngIf="isCollapsed">                     
+                              <div class="row">
+                                  <div class="col">
+                                      <mat-form-field class="example-full-width">
+                                          <textarea matInput placeholder="Medical Information"></textarea>
+                                        </mat-form-field>
+                                    </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col">
+                                    <button mat-stroked-button color="primary">{{'MED.b5'| translate}}</button>
+                                  </div>
+                             </div>
+                         </div>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+            </div>
+        </div>
+    </mat-card>
+
+<mat-card>
+    <mat-card-header class="header">
+        <h1>{{'MED.h5'| translate}}</h1>
+    </mat-card-header>
+    <hr/>
+    <div class="row">
+        <div class="col">
+            <mat-card>
+                <mat-card-header class="header">
+                    <h4>{{'MED.h51'| translate}}</h4>
+                </mat-card-header>
+                <hr/>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="{{'MED.c14'| translate}}" >
+                        </mat-form-field>
+                    </div>    
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="{{'MED.c15'| translate}}" >
+                        </mat-form-field>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field>
+                            <mat-label>{{'MED.c16'| translate}}</mat-label>
+                            <mat-select >
+                              <mat-option>None</mat-option>
+                              <mat-option value="option1">Jordan</mat-option>
+                              <mat-option value="option2">UAE</mat-option>
+                              <mat-option value="option3">Germany</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-">
+                        <mat-form-field class="col-sm-">
+                            <mat-label>{{'MED.c17'| translate}}</mat-label>
+                            <mat-select >
+                              <mat-option>None</mat-option>
+                              <mat-option value="option1">+962</mat-option>
+                              <mat-option value="option2">+999</mat-option>
+                              <mat-option value="option3">+222</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="{{'MED.c18'| translate}}" >
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-">
+                        <mat-form-field class="col-sm-">
+                            <mat-label>{{'MED.c17'| translate}}</mat-label>
+                            <mat-select >
+                              <mat-option>None</mat-option>
+                              <mat-option value="option1">+962</mat-option>
+                              <mat-option value="option2">+999</mat-option>
+                              <mat-option value="option3">+222</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="{{'MED.c19'| translate}}" >
+                        </mat-form-field>
+                    </div>
+                </div>
+                
+            </mat-card>
+
+        </div>
+        <div class="col">
+            <mat-card>
+                <mat-card-header class="header">
+                    <h4>{{'MED.h52'| translate}}</h4>
+                </mat-card-header>
+                <hr/>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="{{'MED.c14'| translate}}" >
+                        </mat-form-field>
+                    </div>    
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="{{'MED.c15'| translate}}" >
+                        </mat-form-field>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field>
+                            <mat-label>{{'MED.c16'| translate}}</mat-label>
+                            <mat-select >
+                              <mat-option>None</mat-option>
+                              <mat-option value="option1">Jordan</mat-option>
+                              <mat-option value="option2">UAE</mat-option>
+                              <mat-option value="option3">Germany</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-">
+                        <mat-form-field class="col-sm-">
+                            <mat-label>{{'MED.c17'| translate}}</mat-label>
+                            <mat-select >
+                              <mat-option>None</mat-option>
+                              <mat-option value="option1">+962</mat-option>
+                              <mat-option value="option2">+999</mat-option>
+                              <mat-option value="option3">+222</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="{{'MED.c18'| translate}}" >
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-">
+                        <mat-form-field class="col-sm-">
+                            <mat-label>{{'MED.c17'| translate}}</mat-label>
+                            <mat-select >
+                              <mat-option>None</mat-option>
+                              <mat-option value="option1">+962</mat-option>
+                              <mat-option value="option2">+999</mat-option>
+                              <mat-option value="option3">+222</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="{{'MED.c19'| translate}}" >
+                        </mat-form-field>
+                    </div>
+                </div>
+                
+            </mat-card>
+        </div>
+    </div>
+    
+</mat-card>
+<mat-card>
+    <mat-card-header class="header">
+        <h1>{{'MED.h6'| translate}}</h1>
+    </mat-card-header>
+    <hr/>
+    
+    <div class="row">
+        <div class="col">
+        <mat-accordion class="example-headers-align">
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <mat-panel-title>
+                                    {{'MED.q7'| translate}}
+                                  </mat-panel-title>
+                            </div>
+                            
+                        </div>
+                    </div> 
+                
+                </mat-expansion-panel-header>
+                <mat-radio-group aria-label="Select an option"  (change)="toggelCollapsed()">
+                    <div class="row">
+                        <div class="col-sm-2"><mat-radio-button value="1" >{{'MED.yes'| translate}}</mat-radio-button></div>
+                        <div class="col-sm-2"><mat-radio-button value="2" checked>{{'MED.no'| translate}}</mat-radio-button></div>
+                    </div>
+                </mat-radio-group>
+                <div class="container" *ngIf="isCollapsed">                     
+                      <div class="row">
+                          <div class="col">
+                              <mat-form-field class="example-full-width">
+                                  <textarea matInput placeholder="other information"></textarea>
+                                </mat-form-field>
+                            </div>
+                      </div>
+                      <div class="row">
+                          <div class="col">
+                            <button mat-stroked-button color="primary">{{'MED.b6'| translate}}</button>
+                          </div>
+                     </div>
+                 </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+    </div>
+</mat-card>
+<mat-card>
+    <mat-card-header class="header">
+        <h1> {{'MED.h7'| translate}}</h1>
+    </mat-card-header>
+    <hr/>
+    <div class="row">
+        <div class="col">
+            <label>ID copy</label>
+            <input type="file" />
+        </div>
+        <div class="col">
+            <label>Passport copy</label>
+            <input type="file" />
+        </div>
+    </div>
+</mat-card>
