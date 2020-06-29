@@ -263,14 +263,41 @@ const countryList = [
   styleUrls: ['./med-record.component.scss']
 })
 export class MedRecordComponent implements OnInit {
-  isCollapsed :boolean =false;
-  toggelCollapsed(){
-    this.isCollapsed=!this.isCollapsed;
+	chronicalDiseases :boolean =false;
+	regularMedicine :boolean =false;
+	allergies  :boolean =false;
+	surgeries :boolean =false;
+	insurance :boolean =false;
+    otherInfo :boolean =false;
+  
+  ChronicalDiseases(){
+    this.chronicalDiseases=!this.chronicalDiseases;
 
   }
+  RegularMedicine(){
+    this.regularMedicine=!this.regularMedicine;
+
+  }
+  Allergies(){
+    this.allergies=!this.allergies;
+
+  }
+  Surgeries(){
+    this.surgeries=!this.surgeries;
+
+  }
+  Insurance(){
+    this.insurance=!this.insurance;
+
+  }
+  OtherInfo(){
+    this.otherInfo=!this.otherInfo;
+
+  }
+  
   constructor(public translate:TranslateService) 
   {
-    translate.setDefaultLang('en')
+    translate.use('en');
    }
    switchLanguage(language: string) {
     this.translate.use(language);
